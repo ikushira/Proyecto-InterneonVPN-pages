@@ -1,21 +1,63 @@
 # robots.txt para Interneon VPN
-# Permitir acceso completo a todos los motores de búsqueda
+# Política de acceso para motores de búsqueda
+# Aplicación VPN segura, gratuita para internet ilimitado y privacidad
 
+# Permitir acceso completo a todos los motores de búsqueda
 User-agent: *
 Allow: /
 
-# Sitemap
+# Sitemap principal
 Sitemap: https://www.interneonvpn.com/sitemap.xml
 
-# Optimización para bots específicos
+# Optimización específica para Googlebot
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 1
 
+# Optimización para Google Images
 User-agent: Googlebot-Image
 Allow: /
 
+# Optimización para Bingbot
 User-agent: Bingbot
 Allow: /
-
-# Evitar sobrecarga del servidor
 Crawl-delay: 1
+
+# Optimización para DuckDuckGo
+User-agent: DuckDuckBot
+Allow: /
+
+# Optimización para Yandex
+User-agent: YandexBot
+Allow: /
+
+# Prevenir acceso a directorios innecesarios
+Disallow: /downloads/
+Disallow: /scripts/
+Disallow: /js/
+Disallow: /*.js$
+Disallow: /*.css$
+
+# Permitir acceso a imágenes
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.gif$
+Allow: /*.webp$
+
+# Retraso de crawl para evitar sobrecarga
+Crawl-delay: 1
+Request-rate: 1/1s
+
+# Agentes no deseados
+User-agent: AhrefsBot
+User-agent: SemrushBot
+User-agent: MJ12bot
+Disallow: /
+
+# Parámetros que no deben rastrearse
+Clean-param: utm_source
+Clean-param: utm_medium
+Clean-param: utm_campaign
+Clean-param: utm_content
+Clean-param: utm_term
