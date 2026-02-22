@@ -34,17 +34,17 @@
     <priority>0.7</priority>
   </url>
   
-  <!-- Planes -->
+  <!-- Proximamente -->
   <url>
-    <loc>https://www.interneonvpn.com/interneonvpn/planes.html</loc>
+    <loc>https://www.interneonvpn.com/interneonvpn/proximamente.html</loc>
     <lastmod>2026-01-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   
-  <!-- Contacto -->
+  <!-- Libreria -->
   <url>
-    <loc>https://www.interneonvpn.com/interneonvpn/contacto.html</loc>
+    <loc>https://www.interneonvpn.com/interneonvpn/libreria.html</loc>
     <lastmod>2026-01-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
