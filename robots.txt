@@ -1,6 +1,7 @@
 # robots.txt para Interneon VPN
 # Política de acceso para motores de búsqueda
 # Aplicación VPN segura, gratuita para internet ilimitado y privacidad
+# Actualizado: 23 de febrero de 2026 - URLs limpias implementadas
 
 # Permitir acceso completo a todos los motores de búsqueda
 User-agent: *
@@ -33,8 +34,8 @@ Allow: /
 
 # Prevenir acceso a directorios innecesarios
 Disallow: /downloads/
-Disallow: /scripts/
-Disallow: /js/
+Disallow: /interneonvpn/scripts/
+Disallow: /interneonvpn/js/
 Disallow: /*.js$
 Disallow: /*.css$
 

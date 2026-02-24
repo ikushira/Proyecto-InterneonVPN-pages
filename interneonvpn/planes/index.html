@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planes - InterNeon VPN</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <header class="header" role="banner">
+    <nav class="navbar" aria-label="Navegación principal">
+  <img src="../images/logo.png" alt="Logo InterNeon VPN" class="logo">
+      <ul class="nav-links">
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/seguridad">Seguridad</a></li>
+        <li><a href="/android">Android</a></li>
+        <li><a href="/testimonios">Testimonios</a></li>
+        <li><a href="/planes">Planes</a></li>
+        <li><a href="/contacto">Contacto</a></li>
+        <li><a href="/soporte">Soporte</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Planes</h1>
+  <p>Elige el plan que mejor se adapte a tus necesidades y protege tu información con InterNeon VPN.</p>
+    <div class="planes-container">
+      <section class="plan-card plan-basic" aria-labelledby="plan-basico">
+        <h2 id="plan-basico">Básico</h2>
+        <p class="plan-precio">$19.900 <span class="plan-precio-mes">COP/mes</span></p>
+        <ul class="plan-lista">
+          <li><span class="check-icon" aria-hidden="true"></span> Protección en tiempo real</li>
+          <li><span class="check-icon" aria-hidden="true"></span> Actualizaciones automáticas</li>
+          <li><span class="check-icon" aria-hidden="true"></span> Soporte por correo</li>
+        </ul>
+        <button class="choose-btn" data-plan="Básico">Elegir Básico</button>
+      </section>
+      <section class="plan-card plan-advanced" aria-labelledby="plan-avanzado">
+        <h2 id="plan-avanzado">Avanzado</h2>
+        <p class="plan-precio">$39.900 <span class="plan-precio-mes">COP/mes</span></p>
+        <ul class="plan-lista">
+          <li><span class="check-icon" aria-hidden="true"></span> Todo lo del plan Básico</li>
+          <li><span class="check-icon" aria-hidden="true"></span> Protección para 3 dispositivos</li>
+          <li><span class="check-icon" aria-hidden="true"></span> Soporte prioritario</li>
+          <li><span class="check-icon" aria-hidden="true"></span> Análisis de amenazas avanzado</li>
+        </ul>
+        <button class="choose-btn" data-plan="Avanzado">Elegir Avanzado</button>
+      </section>
+      <section class="plan-card plan-business" aria-labelledby="plan-empresarial">
+        <h2 id="plan-empresarial">Empresarial</h2>
+        <p class="plan-precio">$99.900 <span class="plan-precio-mes">COP/mes</span></p>
+        <ul class="plan-lista">
+          <li><span class="check-icon" aria-hidden="true"></span> Todo lo del plan Avanzado</li>
+          <li><span class="check-icon" aria-hidden="true"></span> Protección para hasta 20 dispositivos</li>
+          <li><span class="check-icon" aria-hidden="true"></span> Consultoría personalizada</li>
+          <li><span class="check-icon" aria-hidden="true"></span> Soporte 24/7</li>
+        </ul>
+        <button class="choose-btn" data-plan="Empresarial">Elegir Empresarial</button>
+      </section>
+    </div>
+    <p class="planes-nota">Todos los precios incluyen IVA. Puedes cancelar o cambiar de plan en cualquier momento.</p>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <p>Derechos reservados © IkushiraDev</p>
+  </footer>
+  <canvas id="cursor-canvas"></canvas>
+  <script>
+  
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const current = window.location.pathname.split('/').pop();
+  navLinks.forEach(link => {
+    if (link.getAttribute('href') === current || (current === '' && link.getAttribute('href').includes('index'))) {
+      link.classList.add('active');
+    }
+    link.addEventListener('click', function(e) {
+      if (this.hostname === window.location.hostname) {
+        navLinks.forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+      }
+    });
+  });
+
+  
+  document.querySelectorAll('.choose-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const plan = this.getAttribute('data-plan');
+      window.location.href = `/contacto?plan=${encodeURIComponent(plan)}`;
+    });
+  });
+</script>
+  <script src="../js/javascript.js"></script>
+  <script src="../js/javascript.js"></script>
+  <script src="../js/cookie.js"></script>
+
+</body>
+</html>

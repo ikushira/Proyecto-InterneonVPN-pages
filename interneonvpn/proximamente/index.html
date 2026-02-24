@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proximamente - InterNeon VPN</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <header class="header" role="banner">
+    <nav class="navbar" aria-label="Navegación principal">
+  <img src="../images/logo.png" alt="Logo InterNeon VPN" class="logo">
+      <ul class="nav-links">
+        <li><a href="../../index.html">Inicio</a></li>
+        <li><a href="../seguridad/">Seguridad</a></li>
+        <li><a href="../android/">Android</a></li>
+        <li><a href="../testimonios/">Testimonios</a></li>
+        <li><a href="../proximamente/">Proximamente</a></li>
+        <li><a href="../libreria/">Libreria</a></li>
+        <li><a href="../soporte/">Soporte</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="proximamente-section" aria-labelledby="proximamente-titulo">
+      <div class="proximamente-container">
+        <h1 id="proximamente-titulo" class="proximamente-titulo">Proximamente...</h1>
+        <h2 class="proximamente-subtitle">Películas, series y tv en vivo!</h2>
+        <p class="proximamente-brand">Pelis D Neon!!</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <p>Derechos reservados © IkushiraDev</p>
+  </footer>
+  <canvas id="cursor-canvas"></canvas>
+  <script>
+  
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const current = window.location.pathname.split('/').pop();
+  navLinks.forEach(link => {
+    if (link.getAttribute('href') === current || (current === '' && link.getAttribute('href').includes('index'))) {
+      link.classList.add('active');
+    }
+    link.addEventListener('click', function(e) {
+      if (this.hostname === window.location.hostname) {
+        navLinks.forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+      }
+    });
+  });
+</script>
+  <script src="../js/javascript.js"></script>
+  <script src="../js/cookie.js"></script>
+
+</body>
+</html>

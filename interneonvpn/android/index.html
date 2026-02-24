@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Android - InterNeon VPN</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <header class="header">
+    <nav class="navbar">
+  <img src="../images/logo.png" alt="Logo InterNeon VPN" class="logo">
+      <ul class="nav-links">
+        <li><a href="../../index.html">Inicio</a></li>
+        <li><a href="../seguridad/">Seguridad</a></li>
+        <li><a href="../android/">Android</a></li>
+        <li><a href="../testimonios/">Testimonios</a></li>
+        <li><a href="../proximamente/">Proximamente</a></li>
+        <li><a href="../libreria/">Libreria</a></li>
+        <li><a href="../soporte/">Soporte</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Android</h1>
+  <p>Disfruta de la mejor protección VPN en tu dispositivo Android con InterNeon VPN.</p>
+
+    <section class="android-tarjetas-flex">
+      <div class="card-container">
+        <div class="card">
+          <div class="card-front">
+            <h3>Cifrado potente</h3>
+          </div>
+          <div class="card-back">
+            <p>Protege tu conexión a internet en tu teléfono con un encriptado de última generación de VPN.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card-container">
+        <div class="card">
+          <div class="card-front">
+            <h3>Fácil de usar</h3>
+          </div>
+          <div class="card-back">
+            <p>Nuestra app para Android está diseñada para que cualquier usuario pueda conectarse con un solo toque, sin configuraciones complicadas.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card-container">
+        <div class="card">
+          <div class="card-front">
+            <h3>Seguridad garantizada</h3>
+          </div>
+          <div class="card-back">
+            <p>Utilizamos cifrado de nivel militar para proteger tus datos y tu privacidad mientras navegas desde tu dispositivo Android.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card-container">
+        <div class="card">
+          <div class="card-front">
+            <h3>Soporte dedicado</h3>
+          </div>
+          <div class="card-back">
+            <p>Si tienes dudas o necesitas ayuda, nuestro equipo de soporte está disponible para ti directamente desde la app.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Derechos reservados © IkushiraDev</p>
+  </footer>
+<script>
+ 
+      const navLinks = document.querySelectorAll('.nav-links a');
+      const current = window.location.pathname.split('/').pop();
+      navLinks.forEach(link => {
+        if (link.getAttribute('href') === current || (current === '' && link.getAttribute('href').includes('index'))) {
+          link.classList.add('active');
+        }
+        link.addEventListener('click', function(e) {
+          
+          if (this.hostname === window.location.hostname) {
+            navLinks.forEach(l => l.classList.remove('active'));
+            this.classList.add('active');
+          }
+        });
+      });
+</script>
+<script src="../js/javascript.js"></script>
+</script>
+  <canvas id="cursor-canvas"></canvas>
+  <script src="../js/javascript.js"></script>
+  <script src="../js/cookie.js"></script>
+</body>
+</html>

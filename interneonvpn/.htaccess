@@ -1,0 +1,43 @@
+# InterNeon VPN - URL Rewriting para URLs Limpias
+# Estas reglas hacen que las URLs se vean limpias sin .html
+# Estructura: Cada página está en su propia carpeta con index.html
+# Mejora SEO y la experiencia del usuario
+
+<IfModule mod_rewrite.c>
+  # Activar el motor de rewrite
+  RewriteEngine On
+  
+  # Establecer la base para rewrite
+  RewriteBase /interneonvpn/
+  
+  # Reescribir URLs limpias a carpetas con index.html
+  # Ejemplo: /android -> /android/index.html
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_URI} !/$
+  RewriteCond %{REQUEST_URI} !\.html$
+  RewriteRule ^(.+)$ $1/ [L,R=301]
+  
+  # Redirigir URLs con .html a versiones sin extensión (mejora SEO)
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^(.+)\.html$ /$1 [R=301,L]
+  
+  # Permitir acceso directo a index.html en carpetas
+  DirectoryIndex index.html
+</IfModule>
+
+# Comprensión de caché para archivos estáticos
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType text/html "access plus 1 week"
+</IfModule>
+
+# Habilitar compresión GZIP
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/javascript application/javascript
+</IfModule>

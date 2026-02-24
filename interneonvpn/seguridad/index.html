@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seguridad - InterNeon VPN</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <header class="header">
+    <nav class="navbar">
+  <img src="../images/logo.png" alt="Logo InterNeon VPN" class="logo">
+      <ul class="nav-links">
+        <li><a href="../../index.html">Inicio</a></li>
+        <li><a href="../seguridad/">Seguridad</a></li>
+        <li><a href="../android/">Android</a></li>
+        <li><a href="../testimonios/">Testimonios</a></li>
+        <li><a href="../proximamente/">Proximamente</a></li>
+        <li><a href="../libreria/">Libreria</a></li>
+        <li><a href="../soporte/">Soporte</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Seguridad</h1>
+  <p>Con InterNeon VPN, tu seguridad y privacidad son nuestra prioridad. Descubre cómo protegemos tu experiencia digital:</p>
+
+    <section class="android-tarjetas-flex">
+      <div class="tarjeta-contacto">
+        <h3>Cifrado potente</h3>
+        <p>Protege tu conexión a internet en tu teléfono con un encriptado de última generación de VPN.</p>
+      </div>
+      <div class="tarjeta-contacto">
+        <h3>Red global de servidores VPN</h3>
+        <p>Más servidores en todo el mundo ofrecen una conexión móvil más rápida y menos interrupciones.</p>
+      </div>
+      <div class="tarjeta-contacto">
+        <h3>No hay seguimiento de usuarios</h3>
+  <p>INTERNEON VPN no rastrea ni vende los datos de actividades en internet a terceros.</p>
+      </div>
+      <div class="tarjeta-contacto">
+        <h3>Aplicación fácil de usar</h3>
+  <p>La aplicación INTERNEON VPN para Android es fácil de configurar y de usar. También está disponible en modo oscuro.</p>
+      </div>
+    </section>
+
+    
+    <div class="card-container">
+      <div class="card">
+        <div class="card-front">
+          <h3>No Esperes Mas!</h3>
+        </div>
+        <div class="card-back">
+          <p>Disfruta de un mundo sin limites con total seguridad con la aplicacion InterNeon VPN</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>Derechos reservados © IkushiraDev</p>
+  </footer>
+<script>
+  
+      const navLinks = document.querySelectorAll('.nav-links a');
+      const current = window.location.pathname.split('/').pop();
+      navLinks.forEach(link => {
+        if (link.getAttribute('href') === current || (current === '' && link.getAttribute('href').includes('index'))) {
+          link.classList.add('active');
+        }
+        link.addEventListener('click', function(e) {
+          
+          if (this.hostname === window.location.hostname) {
+            navLinks.forEach(l => l.classList.remove('active'));
+            this.classList.add('active');
+          }
+        });
+      });
+</script>
+<script src="../js/javascript.js"></script>
+  </body>
+</html>

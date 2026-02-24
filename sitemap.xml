@@ -6,7 +6,7 @@
   <!-- Página principal - Aplicación VPN Segura y Gratuita -->
   <url>
     <loc>https://www.interneonvpn.com/</loc>
-    <lastmod>2026-02-22</lastmod>
+    <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <mobile:mobile/>
@@ -14,8 +14,8 @@
   
   <!-- Sección Seguridad - Protección de Privacidad y Datos -->
   <url>
-    <loc>https://www.interneonvpn.com/interneonvpn/seguridad.html</loc>
-    <lastmod>2026-02-22</lastmod>
+    <loc>https://www.interneonvpn.com/seguridad</loc>
+    <lastmod>2026-02-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
     <mobile:mobile/>
@@ -23,8 +23,8 @@
   
   <!-- Sección Android - Aplicación VPN para Android Gratuita -->
   <url>
-    <loc>https://www.interneonvpn.com/interneonvpn/android.html</loc>
-    <lastmod>2026-02-22</lastmod>
+    <loc>https://www.interneonvpn.com/android</loc>
+    <lastmod>2026-02-23</lastmod>
     <changefreq>bi-weekly</changefreq>
     <priority>0.9</priority>
     <mobile:mobile/>
@@ -32,8 +32,8 @@
   
   <!-- Testimonios de Usuarios - Reseñas y Experiencias Reales -->
   <url>
-    <loc>https://www.interneonvpn.com/interneonvpn/testimonios.html</loc>
-    <lastmod>2026-02-22</lastmod>
+    <loc>https://www.interneonvpn.com/testimonios</loc>
+    <lastmod>2026-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <mobile:mobile/>
@@ -41,8 +41,8 @@
   
   <!-- Próximamente - Películas y Series en Vivo Gratis -->
   <url>
-    <loc>https://www.interneonvpn.com/interneonvpn/proximamente.html</loc>
-    <lastmod>2026-02-22</lastmod>
+    <loc>https://www.interneonvpn.com/proximamente</loc>
+    <lastmod>2026-02-23</lastmod>
     <changefreq>bi-weekly</changefreq>
     <priority>0.85</priority>
     <mobile:mobile/>
@@ -50,8 +50,8 @@
   
   <!-- Librería - Miles de Libros Gratis de Ciberseguridad y Programación -->
   <url>
-    <loc>https://www.interneonvpn.com/interneonvpn/libreria.html</loc>
-    <lastmod>2026-02-22</lastmod>
+    <loc>https://www.interneonvpn.com/libreria</loc>
+    <lastmod>2026-02-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
     <mobile:mobile/>
@@ -59,17 +59,35 @@
   
   <!-- Soporte - Ayuda y Atención al Cliente 24/7 -->
   <url>
-    <loc>https://www.interneonvpn.com/interneonvpn/soporte.html</loc>
-    <lastmod>2026-02-22</lastmod>
+    <loc>https://www.interneonvpn.com/soporte</loc>
+    <lastmod>2026-02-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <mobile:mobile/>
   </url>
   
+  <!-- Contacto - Formulario de Contacto -->
+  <url>
+    <loc>https://www.interneonvpn.com/contacto</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <mobile:mobile/>
+  </url>
+  
+  <!-- Planes - Opciones de Suscripción -->
+  <url>
+    <loc>https://www.interneonvpn.com/planes</loc>
+    <lastmod>2026-02-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <mobile:mobile/>
+  </url>
+  
   <!-- Políticas de Privacidad - Protección de Datos del Usuario -->
   <url>
-    <loc>https://www.interneonvpn.com/interneonvpn/privacidad.html</loc>
-    <lastmod>2026-02-22</lastmod>
+    <loc>https://www.interneonvpn.com/privacidad</loc>
+    <lastmod>2026-02-23</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
     <mobile:mobile/>
