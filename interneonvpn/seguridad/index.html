@@ -63,21 +63,71 @@
     <p>Derechos reservados © IkushiraDev</p>
   </footer>
 <script>
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const currentPath = window.location.pathname.toLowerCase();
   
-      const navLinks = document.querySelectorAll('.nav-links a');
-      const current = window.location.pathname.split('/').pop();
-      navLinks.forEach(link => {
-        if (link.getAttribute('href') === current || (current === '' && link.getAttribute('href').includes('index'))) {
-          link.classList.add('active');
-        }
-        link.addEventListener('click', function(e) {
-          
-          if (this.hostname === window.location.hostname) {
-            navLinks.forEach(l => l.classList.remove('active'));
-            this.classList.add('active');
-          }
-        });
-      });
+  // Determinar qué sección está activa basándose en la URL
+  navLinks.forEach(link => {
+    const href = link.getAttribute('href').toLowerCase();
+    let isActive = false;
+    
+    // Lógica para determinar la sección activa
+    if (currentPath.includes('android')) {
+      if (href.includes('android')) {
+        isActive = true;
+      }
+    } else if (currentPath.includes('seguridad')) {
+      if (href.includes('seguridad')) {
+        isActive = true;
+      }
+    } else if (currentPath.includes('testimonios')) {
+      if (href.includes('testimonios')) {
+        isActive = true;
+      }
+    } else if (currentPath.includes('proximamente')) {
+      if (href.includes('proximamente')) {
+        isActive = true;
+      }
+    } else if (currentPath.includes('libreria')) {
+      if (href.includes('libreria')) {
+        isActive = true;
+      }
+    } else if (currentPath.includes('soporte')) {
+      if (href.includes('soporte')) {
+        isActive = true;
+      }
+    } else if (currentPath.includes('contacto')) {
+      if (href.includes('contacto')) {
+        isActive = true;
+      }
+    } else if (currentPath.includes('planes')) {
+      if (href.includes('planes')) {
+        isActive = true;
+      }
+    } else if (currentPath.includes('privacidad')) {
+      if (href.includes('privacidad')) {
+        isActive = true;
+      }
+    } else {
+      // Página de inicio
+      if (href.includes('index.html') || href === '../../index.html') {
+        isActive = true;
+      }
+    }
+    
+    if (isActive) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+    
+    link.addEventListener('click', function(e) {
+      if (this.hostname === window.location.hostname) {
+        navLinks.forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+      }
+    });
+  });
 </script>
 <script src="../js/javascript.js"></script>
   </body>

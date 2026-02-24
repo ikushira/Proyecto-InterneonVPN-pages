@@ -166,13 +166,43 @@
 
       
       const navLinks = document.querySelectorAll('.nav-links a');
-      const current = window.location.pathname.split('/').pop();
+      const currentPath = window.location.pathname.toLowerCase();
+      
+      // Determinar qué sección está activa basándose en la URL
       navLinks.forEach(link => {
-        if (link.getAttribute('href') === current || (current === '' && link.getAttribute('href').includes('index'))) {
-          link.classList.add('active');
+        const href = link.getAttribute('href').toLowerCase();
+        let isActive = false;
+        
+        // Lógica para determinar la sección activa
+        if (currentPath === '/' || currentPath.endsWith('index.html') || currentPath.endsWith('shadowguard_ikudev/')) {
+          // Página de inicio
+          if (href === 'index.html' || href === '/') {
+            isActive = true;
+          }
+        } else {
+          // Otras secciones - buscar si la URL contiene la misma carpeta
+          if (href.includes('seguridad') && currentPath.includes('seguridad')) {
+            isActive = true;
+          } else if (href.includes('android') && currentPath.includes('android')) {
+            isActive = true;
+          } else if (href.includes('testimonios') && currentPath.includes('testimonios')) {
+            isActive = true;
+          } else if (href.includes('proximamente') && currentPath.includes('proximamente')) {
+            isActive = true;
+          } else if (href.includes('libreria') && currentPath.includes('libreria')) {
+            isActive = true;
+          } else if (href.includes('soporte') && currentPath.includes('soporte')) {
+            isActive = true;
+          }
         }
+        
+        if (isActive) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+        
         link.addEventListener('click', function(e) {
-          
           if (this.hostname === window.location.hostname) {
             navLinks.forEach(l => l.classList.remove('active'));
             this.classList.add('active');
