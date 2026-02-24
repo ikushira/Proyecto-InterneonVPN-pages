@@ -13,12 +13,12 @@
   <img src="images/logo.png" alt="Logo InterNeon VPN" class="logo">
       <ul class="nav-links">
         <li><a href="../index.html">Inicio</a></li>
-        <li><a href="seguridad/">Seguridad</a></li>
-        <li><a href="android/">Android</a></li>
-        <li><a href="testimonios/">Testimonios</a></li>
-        <li><a href="proximamente/">Proximamente</a></li>
-        <li><a href="libreria/">Libreria</a></li>
-        <li><a href="soporte/">Soporte</a></li>
+        <li><a href="seguridad.html">Seguridad</a></li>
+        <li><a href="android.html">Android</a></li>
+        <li><a href="testimonios.html">Testimonios</a></li>
+        <li><a href="proximamente.html">Proximamente</a></li>
+        <li><a href="libreria.html">Libreria</a></li>
+        <li><a href="soporte.html">Soporte</a></li>
       </ul>
     </nav>
   </header>
@@ -68,21 +68,51 @@
   <script src="js/javascript.js"></script>
   <script src="js/cookie.js"></script>
 <script>
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const currentPath = window.location.pathname.toLowerCase();
+  const filename = currentPath.split('/').pop();
   
-      const navLinks = document.querySelectorAll('.nav-links a');
-      const current = window.location.pathname.split('/').pop();
-      navLinks.forEach(link => {
-        if (link.getAttribute('href') === current || (current === '' && link.getAttribute('href').includes('index'))) {
-          link.classList.add('active');
-        }
-        link.addEventListener('click', function(e) {
-          
-          if (this.hostname === window.location.hostname) {
-            navLinks.forEach(l => l.classList.remove('active'));
-            this.classList.add('active');
-          }
-        });
-      });
+  // Determinar qué sección está activa basándose en el archivo HTML actual
+  navLinks.forEach(link => {
+    const href = link.getAttribute('href').toLowerCase();
+    let isActive = false;
+    
+    // Comparar el nombre del archivo actual con el href del enlace
+    if (filename === 'android.html' && href.includes('android.html')) {
+      isActive = true;
+    } else if (filename === 'seguridad.html' && href.includes('seguridad.html')) {
+      isActive = true;
+    } else if (filename === 'testimonios.html' && href.includes('testimonios.html')) {
+      isActive = true;
+    } else if (filename === 'proximamente.html' && href.includes('proximamente.html')) {
+      isActive = true;
+    } else if (filename === 'libreria.html' && href.includes('libreria.html')) {
+      isActive = true;
+    } else if (filename === 'soporte.html' && href.includes('soporte.html')) {
+      isActive = true;
+    } else if (filename === 'contacto.html' && href.includes('contacto.html')) {
+      isActive = true;
+    } else if (filename === 'planes.html' && href.includes('planes.html')) {
+      isActive = true;
+    } else if (filename === 'privacidad.html' && href.includes('privacidad.html')) {
+      isActive = true;
+    } else if ((filename === 'index.html' || filename === '') && href.includes('index.html')) {
+      isActive = true;
+    }
+    
+    if (isActive) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+    
+    link.addEventListener('click', function(e) {
+      if (this.hostname === window.location.hostname) {
+        navLinks.forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+      }
+    });
+  });
 </script>
 <script src="js/javascript.js"></script>
 
