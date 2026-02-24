@@ -1,7 +1,7 @@
 /**
  * Control de Zoom al 90%
  * Asegura que el zoom se mantenga consistentemente en todas las páginas
- * Compatibilidad con navegadores modernos y antiguos
+ * Sin estirado de página, centrado automáticamente
  */
 
 (function() {
@@ -11,18 +11,10 @@
   function setZoom() {
     const zoomLevel = 0.9; // 90%
     
-    // Método 1: CSS Zoom (navegadores modernos)
+    // Método 1: CSS Zoom (navegadores modernos - recomendado)
     document.documentElement.style.zoom = zoomLevel;
     
-    // Método 2: Transform (compatibilidad)
-    if (!document.documentElement.style.zoom) {
-      document.documentElement.style.transform = `scale(${zoomLevel})`;
-      document.documentElement.style.transformOrigin = 'top left';
-      document.documentElement.style.width = (100 / zoomLevel) + '%';
-      document.documentElement.style.height = (100 / zoomLevel) + '%';
-    }
-    
-    // Restaurar zoom si el navegador lo cambia
+    // Restaurar zoom si el navegador lo intenta cambiar
     window.addEventListener('wheel', function(e) {
       if (e.ctrlKey) {
         e.preventDefault();
@@ -42,5 +34,5 @@
   window.addEventListener('load', setZoom);
   
   // Re-aplicar zoom periódicamente para asegurar consistencia
-  setInterval(setZoom, 500);
+  setInterval(setZoom, 1000);
 })();

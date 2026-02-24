@@ -1,14 +1,14 @@
 /* Configuración de Zoom al 90% para todos los navegadores */
-html, body {
+html {
   zoom: 0.9;
-  transform-origin: top left;
 }
 
 body {
   background: #000 !important;
   color: #e0e0e0;
   font-family: 'Orbitron', Arial, sans-serif;
-  width: 111.111%; /* Compensación de ancho debido al zoom 90% */
+  margin: 0;
+  padding: 0;
 }
 h1, h2, h3, h4, h5, h6 {
   color: #00ffe7;
@@ -858,35 +858,59 @@ input, textarea, select, button, .btn-descargar, .btn-wsp {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 10000;
+  padding: 0;
+  margin: 0;
 }
-#overlay-publicidad img {
-  max-width: 90vw;
-  max-height: 90vh;
-  border-radius: 10px;
-  box-shadow: 0 0 20px #fff;
+
+/* Contenedor para la imagen y botón como unidad */
+#overlay-publicidad {
+  flex-direction: column;
+  gap: 15px;
 }
+
+#overlay-publicidad > * {
+  position: relative;
+}
+
+#publicidadImg {
+  max-width: 85vw;
+  max-height: 85vh;
+  width: auto;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+  display: block;
+}
+
 #cerrarBtnPublicidad {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  padding: 10px 20px;
+  padding: 12px 24px;
   background-color: #fff;
-  color: black;
+  color: #000;
   border: none;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 6px;
   font-weight: bold;
+  font-size: 1rem;
   z-index: 10001;
+  transition: all 0.3s ease;
+  min-height: 44px;
+  min-width: 100px;
 }
+
 #cerrarBtnPublicidad:hover {
-  background-color: #f0f0f0;
+  background-color: #e8e8e8;
+  transform: scale(1.05);
+}
+
+#cerrarBtnPublicidad:active {
+  transform: scale(0.98);
 }
 
 
