@@ -1,8 +1,14 @@
+/* Configuración de Zoom al 90% para todos los navegadores */
+html, body {
+  zoom: 0.9;
+  transform-origin: top left;
+}
 
 body {
   background: #000 !important;
   color: #e0e0e0;
   font-family: 'Orbitron', Arial, sans-serif;
+  width: 111.111%; /* Compensación de ancho debido al zoom 90% */
 }
 h1, h2, h3, h4, h5, h6 {
   color: #00ffe7;
