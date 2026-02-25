@@ -44,6 +44,7 @@ a:hover, .nav-links a:hover {
   z-index: 20;
   position: relative;
   pointer-events: auto;
+  display: none;
 }
 .nav-links {
   display: flex;
@@ -142,9 +143,12 @@ a:hover, .nav-links a:hover {
 }
 .hero {
   text-align: center;
-  padding: 100px 20px;
-  /* sutil gradiente para dar profundidad sobre el fondo negro */
+  padding: 80px 20px;
   background: radial-gradient(circle at 10% 10%, #0b0f12 0%, #000 60%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Modal / form container used in testimonios.html moved from inline styles */
@@ -221,21 +225,25 @@ main { padding: 40px 20px; }
   color: #ccc;
 }
 .btn-descargar, .btn-wsp {
-  background: #cf1111;
-  color: #000;
+  background: #000;
+  color: #39ff14;
   border: 2px solid #39ff14;
   border-radius: 8px;
-  padding: 12px 28px;
+  padding: 14px 32px;
   font-weight: bold;
   font-size: 1.1rem;
-  transition: all 0.3s;
-  box-shadow: 0 0 10px #39ff1444;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px #39ff1444;
+  display: inline-block;
+  margin: 12px;
+  text-align: center;
+  line-height: 1.4;
 }
 .btn-descargar:hover, .btn-wsp:hover {
-  background: #00bfae;
-  color: #fff;
-  border-color: #39ff14;
-  box-shadow: 0 0 20px #39ff14;
+  background: #39ff14;
+  color: #000;
+  box-shadow: 0 0 25px #39ff14;
+  transform: scale(1.05);
 }
 .btn-enviar {
   background: #000;
@@ -254,22 +262,36 @@ main { padding: 40px 20px; }
   color: #000;
   text-shadow: none;
 }
+
+.botones-centrados {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 24px 0;
+}
+
 .sparkle-btn {
-  --color: #00fff7;
+  --color: #39ff14;
   position: relative;
-  padding: 14px 38px;
-  background: transparent;
-  font-size: 1rem;
+  padding: 16px 42px;
+  background: #000;
+  font-size: 1.15rem;
   font-weight: 600;
-  color: #181818;
+  color: #39ff14;
   border: 3px solid var(--color);
   border-radius: 8px;
-  box-shadow: 0 0 9px #fec1958c;
+  box-shadow: 0 0 15px #39ff1466;
   transition: all .3s ease-in-out;
   cursor: pointer;
   overflow: hidden;
   z-index: 1;
-  line-height: 1.4;
+  line-height: 1.5;
+  text-align: center;
+  display: inline-block;
+  margin: 12px;
 }
 .sparkle-btn .star-1, .sparkle-btn .star-6 {
   position: absolute;
@@ -294,6 +316,13 @@ main { padding: 40px 20px; }
   z-index: 0;
 }
 .sparkle-btn:hover:before { opacity: 1; }
+
+.sparkle-btn:hover {
+  background: #39ff14;
+  color: #000;
+  box-shadow: 0 0 30px #39ff14;
+  transform: scale(1.08);
+}
 
 /* Botón WhatsApp con color verde neon */
 .btn-whatsapp {
@@ -800,8 +829,8 @@ input, textarea, select, button, .btn-descargar, .btn-wsp {
 
 .logo-hero {
   display: block;
-  margin: 0 auto 18px auto;
-  width: 220px;
+  margin: 0 auto 24px auto;
+  width: 280px;
   max-width: 80vw;
   height: auto;
 }
