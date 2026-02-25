@@ -223,15 +223,19 @@ main { padding: 40px 20px; }
 .btn-descargar, .btn-wsp {
   background: #cf1111;
   color: #000;
-  border: none;
+  border: 2px solid #39ff14;
   border-radius: 8px;
-  padding: 10px 24px;
+  padding: 12px 28px;
   font-weight: bold;
-  transition: background 0.2s;
+  font-size: 1.1rem;
+  transition: all 0.3s;
+  box-shadow: 0 0 10px #39ff1444;
 }
 .btn-descargar:hover, .btn-wsp:hover {
   background: #00bfae;
   color: #fff;
+  border-color: #39ff14;
+  box-shadow: 0 0 20px #39ff14;
 }
 .btn-enviar {
   background: #000;
@@ -253,10 +257,10 @@ main { padding: 40px 20px; }
 .sparkle-btn {
   --color: #00fff7;
   position: relative;
-  padding: 12px 35px;
+  padding: 14px 38px;
   background: transparent;
-  font-size: 17px;
-  font-weight: 500;
+  font-size: 1rem;
+  font-weight: 600;
   color: #181818;
   border: 3px solid var(--color);
   border-radius: 8px;
@@ -265,6 +269,7 @@ main { padding: 40px 20px; }
   cursor: pointer;
   overflow: hidden;
   z-index: 1;
+  line-height: 1.4;
 }
 .sparkle-btn .star-1, .sparkle-btn .star-6 {
   position: absolute;
@@ -289,6 +294,17 @@ main { padding: 40px 20px; }
   z-index: 0;
 }
 .sparkle-btn:hover:before { opacity: 1; }
+
+/* Botón WhatsApp con color verde neon */
+.btn-whatsapp {
+  --color: #39ff14;
+  border-color: #39ff14 !important;
+  box-shadow: 0 0 9px #39ff1455 !important;
+}
+
+.btn-whatsapp:hover {
+  --color: #39ff14;
+}
 .beneficios, .contacto {
   padding: 40px 20px;
 }
@@ -980,11 +996,21 @@ input, textarea, select, button, .btn-descargar, .btn-wsp {
   
   /* Botones más grandes para touch */
   .btn-descargar, .btn-whatsapp {
-    padding: 14px 28px;
-    font-size: 1rem;
-    min-height: 48px;
-    display: inline-block;
-    margin: 10px auto;
+    padding: 16px 20px;
+    font-size: 1.05rem;
+    min-height: 52px;
+    display: block;
+    margin: 15px auto;
+    text-align: center;
+    line-height: 1.4;
+    max-width: 220px;
+    border: 2px solid #39ff14 !important;
+    box-shadow: 0 0 15px #39ff1455 !important;
+  }
+  
+  .sparkle-btn {
+    padding: 16px 20px !important;
+    border: 3px solid var(--color) !important;
   }
   
   /* Navegación móvil optimizada */
@@ -1001,7 +1027,8 @@ input, textarea, select, button, .btn-descargar, .btn-wsp {
   }
   
   .nav-links {
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 8px;
     width: 100%;
   }
@@ -1012,8 +1039,8 @@ input, textarea, select, button, .btn-descargar, .btn-wsp {
   }
   
   .nav-links a {
-    font-size: 1rem;
-    padding: 10px 14px;
+    font-size: 0.95rem;
+    padding: 10px 10px;
     display: block;
     width: 100%;
   }

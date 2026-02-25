@@ -195,21 +195,85 @@ document.querySelectorAll('.choose-btn').forEach(btn => {
   });
 })();
 
-// Overlay de publicidad
+// Overlay de publicidad - Manejador con mejor tolerancia
 document.addEventListener("DOMContentLoaded", function() {
   const cerrarBtn = document.getElementById("cerrarBtnPublicidad");
   const overlay = document.getElementById("overlay-publicidad");
-  if (overlay && cerrarBtn) {
-    // Bloquea el scroll mientras el overlay está visible
-    document.body.style.overflow = "hidden";
-    cerrarBtn.addEventListener("click", function() {
+  
+  if (!overlay) return; // Salir si no existe el overlay
+  
+  // Función para cerrar el overlay
+  function cerrarOverlay() {
+    if (overlay) {
       overlay.style.display = "none";
       document.body.style.overflow = "auto";
-    });
-    setTimeout(function() {
-      overlay.style.display = "none";
-      document.body.style.overflow = "auto";
-    }, 5000);
+    }
   }
+  
+  // Bloquea el scroll mientras el overlay está visible
+  document.body.style.overflow = "hidden";
+  
+  // Agregar evento al botón cerrar
+  if (cerrarBtn) {
+    cerrarBtn.addEventListener("click", function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      cerrarOverlay();
+    });
+    
+    // Agregar también soporte a teclado (Escape)
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape' && overlay.style.display !== 'none') {
+        cerrarOverlay();
+      }
+    });
+  }
+  
+  // Cerrar automáticamente después de 5 segundos
+  setTimeout(function() {
+    cerrarOverlay();
+  }, 5000);
+  
+  // Smooth scroll a las secciones al hacer clic en los enlaces del menú
+  const navLinks = document.querySelectorAll('.nav-links a');
+  navLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      
+      // Si es un enlace interno a la misma página
+      if (href === 'index.html' || href === '#') {
+        e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+        return;
+      }
+      
+      // Si es un enlace a otra página, permite la navegación normal
+      // pero también agregamos smooth scroll para cuando se cargue
+      const targetPage = href.split('/').pop();
+      const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+      
+      if (targetPage === currentPage) {
+        e.preventDefault();
+        // Buscar el h2 que corresponde a la página actual
+        const h2Elements = document.querySelectorAll('main h2');
+        if (h2Elements.length > 0) {
+          h2Elements[0].scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    });
+  });
+  
+  // Cuando la página carga, si viene de un hash, scroll a esa sección
+  window.addEventListener('load', function() {
+    const h2Elements = document.querySelectorAll('main h2');
+    if (h2Elements.length > 0 && !window.location.hash) {
+      // Scroll suave al primer h2 de la sección principal
+      setTimeout(() => {
+        h2Elements[0].scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
+    }
+  });
 });
-

@@ -170,6 +170,11 @@
         <div class="saludo-subtitulo">Bienvenido a InterNeon VPN.</div>
       `;
       saludo.style.display = 'block';
+      
+      // Scroll suave al saludo cuando la página carga
+      setTimeout(() => {
+        saludo.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 500);
 
       
       const navLinks = document.querySelectorAll('.nav-links a');
@@ -229,7 +234,7 @@
   <h1 class="titulo-neon">Interneon VPN — Navega Seguro en Latinoamérica</h1>
     <p class="subtitulo">Protege tu privacidad, desbloquea Internet y navega de forma segura desde tu móvil Android. Acceso disponible según región y operador.*</p>
     <a href="downloads/apk/interneon-vpn.apk" class="btn-descargar sparkle-btn" download="interneon-vpn.apk" aria-label="Descargar APK de Interneon VPN">
-      Descargar App
+      Descargar Aplicacion<br>Internet Gratis!!
       <span class="star-1"></span>
       <span class="star-6"></span>
     </a>
@@ -286,10 +291,10 @@
     <section class="seccion-destacada">
       <h2>¿Cómo Descargar Interneon VPN?</h2>
       <p>Descargar nuestra app es muy fácil. Solo necesitas un móvil Android, descargar el APK oficial desde nuestro sitio web e instalarlo. En menos de un minuto estarás navegando de forma segura.</p>
-      <a class="btn-descargar" href="downloads/apk/interneon-vpn.apk" download="interneon-vpn.apk" aria-label="Descargar APK oficial de Interneon VPN">Descargar App</a>
+      <a class="btn-descargar" href="downloads/apk/interneon-vpn.apk" download="interneon-vpn.apk" aria-label="Descargar APK oficial de Interneon VPN">Descargar Aplicacion<br>Internet Gratis!!</a>
     </section>
     <a href="https://wa.me/573246331485" class="btn-whatsapp sparkle-btn" target="_blank" rel="noopener noreferrer" aria-label="Contactar soporte por WhatsApp">
-      Soporte por WhatsApp
+      Soporte<br>Whatsapp
       <span class="star-1"></span>
       <span class="star-6"></span>
     </a>
