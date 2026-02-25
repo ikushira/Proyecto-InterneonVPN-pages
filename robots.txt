@@ -1,7 +1,7 @@
 # robots.txt para Interneon VPN
 # Política de acceso para motores de búsqueda
 # Aplicación VPN segura, gratuita para internet ilimitado y privacidad
-# Actualizado: 23 de febrero de 2026 - URLs limpias implementadas
+# Actualizado: 24 de febrero de 2026
 
 # Permitir acceso completo a todos los motores de búsqueda
 User-agent: *
@@ -17,7 +17,7 @@ Crawl-delay: 1
 
 # Optimización para Google Images
 User-agent: Googlebot-Image
-Allow: /
+Allow: /interneonvpn/images/
 
 # Optimización para Bingbot
 User-agent: Bingbot
@@ -32,21 +32,22 @@ Allow: /
 User-agent: YandexBot
 Allow: /
 
-# Prevenir acceso a directorios innecesarios
+# Prevenir acceso a directorios innecesarios (no indexables)
 Disallow: /downloads/
-Disallow: /interneonvpn/scripts/
-Disallow: /interneonvpn/js/
+
+# No indexar archivos javascript y css (se pueden cambiar libremente)
 Disallow: /*.js$
 Disallow: /*.css$
 
-# Permitir acceso a imágenes
+# Permitir acceso a imágenes y assets
+Allow: /interneonvpn/images/
 Allow: /*.png$
 Allow: /*.jpg$
 Allow: /*.jpeg$
 Allow: /*.gif$
 Allow: /*.webp$
 
-# Retraso de crawl para evitar sobrecarga
+# Retraso de crawl para evitar sobrecarga del servidor
 Crawl-delay: 1
 Request-rate: 1/1s
 
